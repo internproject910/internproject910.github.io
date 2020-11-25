@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <!-- auto refresh, not recommended
+  <meta http-equiv="refresh" content="1">
+-->
+<style>
+h1 {text-align: center;}
+h2 {text-align: center;}
+#operator {
+  width: 30px;
+  resize:none;
+}
+#a {
+  width: 200px;
+  resize:none;
+}
+#b {
+  width: 200px;
+  resize:none;
+}
+label {
+  width:10px;
+  display: inline-block;
+}
+#result {
+  width: 460px;
+  resize:none;
+}
+</style>
+</head>
+<body onload="refreshRecentResults()">
+<h1>Calculator</h1>
+  <br>
+  <h2>Recent 10 calculations</h2>
+  <br>
+    <div align=center>
+     <table id="recentResults"><table>
+     <br><br>
+     <textarea id="a" placeholder="the first number"></textarea><label id="space"></label><textarea id="operator" placeholder="+ -&#10;* /"></textarea><label id="space"></label><textarea id="b" placeholder="the second number"></textarea>
+     <br>
+     <textarea id="result" disabled placeholder="result"></textarea>
+     <br><button id="myButton" onclick="doCalculation()">Calculate</button>
+     <p>Enter the first number, the operator, the second number, and press the 'Calculate' button.</p>
+     </div>
+     <script src="calculator.js"></script>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyA1Ko0Hjk34kpjl2x4BMXD1AH6WSba6Guk",
+    authDomain: "calculator-e51f4.firebaseapp.com",
+    databaseURL: "https://calculator-e51f4.firebaseio.com",
+    projectId: "calculator-e51f4",
+    storageBucket: "calculator-e51f4.appspot.com",
+    messagingSenderId: "571176003252",
+    appId: "1:571176003252:web:f8759d53f6f5bb6b20d9e1",
+    measurementId: "G-DY8H3LEY87"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+</body>
+</html>
